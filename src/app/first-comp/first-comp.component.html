@@ -1,0 +1,11 @@
+
+<div class="snap-card">
+  <img  [src]="snap.imageUrl"  alt="{{snap.title}}">
+  <h2>{{snap.title}}</h2>
+  <p>Mise en ligne le {{snap.creationDate}}</p>
+  <p>{{snap.description}}</p>
+  <p>✌️ {{snap.snaps}}</p>
+
+  <button (click)="handleSnap()">{{buttonText}}</button>
+</div>
+

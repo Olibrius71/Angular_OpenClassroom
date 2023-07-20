@@ -1,0 +1,25 @@
+@import "../../styles";
+@import "../../functions";
+
+.snap-card {
+    width: 90%;
+    .flex();
+    .bordered();
+    background-color: @black-color;
+    padding: 1.8vh 2vw;
+
+    img {
+        width: 100%;
+    }
+    p {
+        font-size: 1.17rem;
+    }
+    button {
+        background-color: dodgerblue;
+        font-size: 1.3rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+.flex(@direction: column, @justify: space-evenly, @align: center) {
+  display: flex;
+  flex-direction: @direction;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+.bordered(@border-size: 3px, @border-color: ghostwhite, @radius: 7px) {
+  border: @border-size ridge @border-color;
+  border-radius: @radius;
+}
