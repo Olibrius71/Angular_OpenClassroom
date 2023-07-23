@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Snap} from "../models/snap.model";
+import {throwIfEmpty} from "rxjs";
 
 @Component({
   selector: 'app-first-comp',
@@ -29,4 +30,6 @@ export class FirstCompComponent implements OnInit {
     }
 
   }
+
+  protected readonly throwIfEmpty = throwIfEmpty;
 }

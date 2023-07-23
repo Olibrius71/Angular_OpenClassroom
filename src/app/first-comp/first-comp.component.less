@@ -8,6 +8,8 @@
     background-color: @black-color;
     padding: 1.8vh 2vw;
 
+    transition: all ease .45s;
+
     img {
         width: 100%;
     }
@@ -24,9 +26,17 @@
     }
 
   .location {
-    font-size: .95rem;
+      font-size: .92rem;
 
-    position: absolute;
-    margin-top: 5.7vh;
+      position: absolute;
+      margin-top: 7.2vh;
   }
+}
+
+.snapped-card {
+    background-color: fade( lighten(@black-color, 8%), 82%);
+
+    button {
+        box-shadow: whitesmoke 4px 4px 8px;
+    }
 }
