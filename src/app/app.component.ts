@@ -14,7 +14,8 @@ export class AppComponent implements OnInit{
     this.firstSnap = new Snap(
       "https://www.rynek-lotniczy.pl//img/20170919125904170919chopinawaw.jpg_678-443.jpg",
       "Arrivée à Varsovie",
-      "Je viens d'arriver à Varsovie avec ma femme et mes enfants et je prends une photo de nous devant l'aéroport"
+      "Je viens d'arriver à Varsovie avec ma femme et mes enfants et je prends une photo de nous devant l'aéroport",
+      "Varsovie"
     );
 
     this.secondSnap = new Snap(
