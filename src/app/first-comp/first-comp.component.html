@@ -1,12 +1,9 @@
 
 <div class="snap-card" [ngClass]=" { 'snapped-card': snapped} ">
-  <img  [src]="snap.imageUrl"  alt="{{snap.title}}">
   <h2>{{snap.title | titlecase}}</h2>
-  <p *ngIf="snap.location" class="location">Photo prise à {{snap.location | uppercase}}</p>
-  <p>Mise en ligne le {{snap.creationDate | date: "d MMMM YYYY, à HH:mm"}}</p>
   <p>{{snap.description}}</p>
   <p>✌️ <span [ngStyle]="{ color: 'rgb(' + (255 - snap.snaps * 4) + ', 255, ' + (255 - snap.snaps * 4) + ')'}">{{snap.snaps}}</span> </p>
 
-  <button (click)="handleSnap()">{{buttonText}}</button>
+  <button (click)="viewSnap()">VOIR</button>
 </div>
 

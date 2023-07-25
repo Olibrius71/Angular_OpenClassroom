@@ -9,6 +9,7 @@ import { FirstCompListComponent } from './first-comp-list/first-comp-list.compon
 import { HeaderComponent } from './header/header.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { HomePageComponent } from './home-page/home-page.component';
+import { SingleFirstCompComponent } from './single-first-comp/single-first-comp.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     FirstCompComponent,
     FirstCompListComponent,
     HeaderComponent,
-    HomePageComponent
+    HomePageComponent,
+    SingleFirstCompComponent
   ],
   imports: [
     BrowserModule,

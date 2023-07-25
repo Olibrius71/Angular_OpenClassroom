@@ -18,7 +18,7 @@ export class SnapService {
       2,
       "https://www.kaldewei.fr/fileadmin/_processed_/3/0/csm_1_Kaldewei_Hotel_Indigo_Warsaw_e4ac35d0d7.jpg",
       "Arrivée à l'hôtel",
-      "Aprèsêtre sortis de l'aéroport, on s'est dirigé vers l'hôtel qu'on avait réservé et j'en ai pris une photo",
+      "Après être sortis de l'aéroport, on s'est dirigé vers l'hôtel qu'on avait réservé et j'en ai pris une photo",
       47
     )
   ];

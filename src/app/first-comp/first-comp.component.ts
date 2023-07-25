@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Snap} from "../models/snap.model";
 import {SnapService} from "../services/snap.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-first-comp',
@@ -12,24 +13,16 @@ export class FirstCompComponent implements OnInit {
   snapped!: boolean;
   buttonText!: string;
 
-  constructor(private snapService: SnapService) {}
+  constructor(private snapService: SnapService,
+              private router: Router) {}
 
   ngOnInit(): void {
     this.snapped = false;
     this.buttonText = "SNAP";
   }
 
-  handleSnap(): void {
-    if (!this.snapped) {
-      this.snapService.changeSnapById(this.snap.id, true);
-      this.snapped = true;
-      this.buttonText = "SNAPPE";
-    }
-    else {
-      this.snapService.changeSnapById(this.snap.id, false)
-      this.snapped = false;
-      this.buttonText = "SNAP";
-    }
 
+  viewSnap(): void {
+    this.router.navigateByUrl("snaps/" + this.snap.id);
   }
 }
