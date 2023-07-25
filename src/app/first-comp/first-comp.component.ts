@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Snap} from "../models/snap.model";
-import {throwIfEmpty} from "rxjs";
+import {SnapService} from "../services/snap.service";
 
 @Component({
   selector: 'app-first-comp',
@@ -12,6 +12,8 @@ export class FirstCompComponent implements OnInit {
   snapped!: boolean;
   buttonText!: string;
 
+  constructor(private snapService: SnapService) {}
+
   ngOnInit(): void {
     this.snapped = false;
     this.buttonText = "SNAP";
@@ -19,17 +21,15 @@ export class FirstCompComponent implements OnInit {
 
   handleSnap(): void {
     if (!this.snapped) {
-      this.snap.snaps++;
+      this.snapService.changeSnapById(this.snap.id, true);
       this.snapped = true;
       this.buttonText = "SNAPPE";
     }
     else {
-      this.snap.snaps--;
+      this.snapService.changeSnapById(this.snap.id, false)
       this.snapped = false;
       this.buttonText = "SNAP";
     }
 
   }
-
-  protected readonly throwIfEmpty = throwIfEmpty;
 }

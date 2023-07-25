@@ -1,0 +1,32 @@
+@import "../../styles";
+@import "../../functions";
+
+#home-card-container {
+    width: 100%;
+    .flex();
+
+    padding: 6vh 0;
+
+    #home-card {
+        background-color: @black-color;
+        width: 20%;
+        height: 34vh;
+
+        padding: 1.2vh 2vw;
+
+        .flex(@justify: space-around);
+
+        h3 {
+            font-size: 1.9rem;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.11rem;
+        }
+
+        a {
+            text-decoration: underline;
+        }
+    }
+}

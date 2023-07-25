@@ -1,5 +1,6 @@
 export class Snap {
 
+  id!: number;
   imageUrl!: string;
   title!: string;
   description!: string
@@ -7,7 +8,8 @@ export class Snap {
   snaps!: number;
   location?: string;
 
-  constructor(imageUrl: string, title: string, description: string, snaps: number, location?: string) {
+  constructor(id: number, imageUrl: string, title: string, description: string, snaps: number, location?: string) {
+    this.id = id;
     this.imageUrl = imageUrl;
     this.title = title;
     this.description = description;
