@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { HomePageComponent } from './home-page/home-page.component';
 import { SingleFirstCompComponent } from './single-first-comp/single-first-comp.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { SingleFirstCompComponent } from './single-first-comp/single-first-comp.
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: "fr-FR" }

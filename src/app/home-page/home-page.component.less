@@ -3,6 +3,7 @@
 
 #home-card-container {
     width: 100%;
+    height: 80vh;
     .flex();
 
     padding: 6vh 0;
@@ -30,6 +31,25 @@
             cursor: pointer;
             font-size: 1.7rem;
             color: antiquewhite;
+        }
+    }
+
+    #newsletter-container {
+        .flex();
+        width: 30vw;
+        height: 10vh;
+
+        form {
+            .flex();
+
+            button, label {
+                font-size: 1.2rem;
+                color: whitesmoke;
+                background-color: #010121;
+            }
+            input {
+                color: darkblue;
+            }
         }
     }
 }

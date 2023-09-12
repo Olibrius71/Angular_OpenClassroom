@@ -4,4 +4,12 @@
         <p>Rendez-vous sur le lien ci-dessous pour voir les Snaps</p>
         <a (click)="goToSnapsPage()">Snaps</a>
     </div>
+
+    <div id="newsletter-container">
+        <form #emailForm="ngForm" (ngSubmit)="OnSubmitForm(emailForm)">
+            <label for="emailInput">Inscrivez-vous pour recevoir notre newsletter !</label>
+            <input type="email" id="emailInput" name="userEmail" [(ngModel)]="userEmail">
+            <button type="submit">VALIDER</button>
+        </form>
+    </div>
 </div>
