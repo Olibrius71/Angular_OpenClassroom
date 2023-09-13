@@ -24,4 +24,8 @@ export class HomePageComponent implements OnInit{
   OnSubmitForm(formulaire: NgForm): void {
     console.log(formulaire.value);
   }
+
+  goToCreateSnap(): void {
+    this.router.navigateByUrl("create");
+  }
 }

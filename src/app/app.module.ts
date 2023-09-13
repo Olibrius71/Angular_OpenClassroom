@@ -11,6 +11,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import { HomePageComponent } from './home-page/home-page.component';
 import { SingleFirstCompComponent } from './single-first-comp/single-first-comp.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { CreateSnapComponent } from './create-snap/create-snap.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     FirstCompListComponent,
     HeaderComponent,
     HomePageComponent,
-    SingleFirstCompComponent
+    SingleFirstCompComponent,
+    CreateSnapComponent
   ],
   imports: [
     BrowserModule,

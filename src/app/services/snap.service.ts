@@ -23,6 +23,8 @@ export class SnapService {
     )
   ];
 
+  lastId: number = 2;
+
   getAllSnaps(): Snap[] {
     return this.snapList;
   }
@@ -38,6 +40,21 @@ export class SnapService {
   changeSnapById(snapToUpdateId: number, addingSnap: boolean): void {
     const snapToUpdate = this.getSnapById(snapToUpdateId);
     (addingSnap) ? snapToUpdate.snaps++ : snapToUpdate.snaps-- ;
+  }
+
+
+  addSnap(formInputs: { title: string, description: string, imageUrl: string, location: string} ): void {
+    const newSnap = new Snap(
+      this.lastId + 1,
+      formInputs.imageUrl,
+      formInputs.title,
+      formInputs.description,
+      0,
+      formInputs.location
+    )
+    this.snapList.push(newSnap);
+
+    this.lastId++;
   }
 }
 
