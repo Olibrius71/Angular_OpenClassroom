@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Snap} from "../models/snap.model";
 import {SnapService} from "../services/snap.service";
-import {interval, Subject, takeUntil, tap} from "rxjs";
+import {interval, Observable, Subject, takeUntil, tap} from "rxjs";
 
 @Component({
   selector: 'app-first-comp-list',
@@ -9,13 +9,13 @@ import {interval, Subject, takeUntil, tap} from "rxjs";
   styleUrls: ['./first-comp-list.component.less']
 })
 export class FirstCompListComponent implements OnInit, OnDestroy {
-  snapList!: Snap[];
+  snapList$!: Observable<Snap[]>;
   private destroyed$!: Subject<boolean>;
 
   constructor(private snapService: SnapService) {}
 
   ngOnInit(): void {
-    this.snapList = this.snapService.getAllSnaps();
+    this.snapList$ = this.snapService.getAllSnaps();
     this.destroyed$ = new Subject<boolean>();
 
     interval(560)

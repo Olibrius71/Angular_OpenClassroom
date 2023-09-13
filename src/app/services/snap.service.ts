@@ -1,5 +1,7 @@
 import {Injectable} from "@angular/core";
 import {Snap} from "../models/snap.model";
+import {HttpClient} from "@angular/common/http";
+import {map, Observable, switchMap} from "rxjs";
 
 @Injectable({
   providedIn: "root"
@@ -25,21 +27,31 @@ export class SnapService {
 
   lastId: number = 2;
 
-  getAllSnaps(): Snap[] {
-    return this.snapList;
+  constructor(private httpClient: HttpClient) {
   }
 
-  getSnapById(snapToGetId: number): Snap {
-    const snapToGet = this.snapList.find(snap => snap.id === snapToGetId);
+  getAllSnaps():  Observable<Snap[]> {
+    return this.httpClient.get<Snap[]>("http://localhost:3000/snaps");
+  }
+
+  getSnapById(snapToGetId: number): Observable<Snap> {
+    const snapToGet = this.httpClient.get<Snap>(`http://localhost:3000/snaps/${snapToGetId}`);
     if (!snapToGet) {
       throw new Error("Error while getting snap (because snapToGet is undefined)");
     }
     return snapToGet;
   }
 
-  changeSnapById(snapToUpdateId: number, addingSnap: boolean): void {
-    const snapToUpdate = this.getSnapById(snapToUpdateId);
-    (addingSnap) ? snapToUpdate.snaps++ : snapToUpdate.snaps-- ;
+  changeSnapById(snapToUpdateId: number, addingSnap: boolean): Observable<Snap> {
+    return this.getSnapById(snapToUpdateId)
+      .pipe(
+        map(snap => ({
+          ...snap, snaps: (addingSnap) ? snap.snaps + 1 : snap.snaps - 1
+        })
+      ),
+      switchMap(updatedSnap =>
+        this.httpClient.put<Snap>("http://localhost:3000/snaps/" + snapToUpdateId, updatedSnap)
+      ))
   }
 
 

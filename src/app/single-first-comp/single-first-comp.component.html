@@ -1,6 +1,6 @@
 <div class="snap-cards-container">
     <div class="invisible-card"></div>
-    <div class="snap-card" [ngClass]=" { 'snapped-card': snapped} ">
+    <div class="snap-card" *ngIf="snap$ | async as snap" [ngClass]=" { 'snapped-card': snapped} ">
         <img  [src]="snap.imageUrl"  alt="{{snap.title}}">
         <h2>{{snap.title | titlecase}}</h2>
         <p *ngIf="snap.location" class="location">Photo prise à {{snap.location | uppercase}}</p>

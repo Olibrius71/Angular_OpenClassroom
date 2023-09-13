@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Snap} from "../models/snap.model";
 import {SnapService} from "../services/snap.service";
 import {ActivatedRoute} from "@angular/router";
+import {Observable, tap} from "rxjs";
 
 @Component({
   selector: 'app-single-first-comp',
@@ -10,29 +11,40 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class SingleFirstCompComponent implements OnInit {
   snap!: Snap;
+  snap$!: Observable<Snap>;
+
   snapped!: boolean;
   buttonText!: string;
+
+  snapId!: number;
 
   constructor(private snapService: SnapService,
               private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
-    const snapId = +this.activatedRoute.snapshot.params["id"];
-    this.snap = this.snapService.getSnapById(snapId);
+    this.snapId = +this.activatedRoute.snapshot.params["id"];
+    this.snap$ = this.snapService.getSnapById(this.snapId);
     this.snapped = false;
     this.buttonText = "SNAP";
   }
 
   handleSnap(): void {
     if (!this.snapped) {
-      this.snapService.changeSnapById(this.snap.id, true);
-      this.snapped = true;
-      this.buttonText = "SNAPPE";
+      this.snap$ = this.snapService.changeSnapById(this.snapId, true).pipe(
+        tap(() => {
+          this.snapped = true;
+          this.buttonText = "SNAPPE";
+        })
+      );
+
     }
     else {
-      this.snapService.changeSnapById(this.snap.id, false)
-      this.snapped = false;
-      this.buttonText = "SNAP";
+      this.snap$ = this.snapService.changeSnapById(this.snapId, false).pipe(
+        tap(() => {
+          this.snapped = false;
+          this.buttonText = "SNAP";
+        })
+      );
     }
 
   }

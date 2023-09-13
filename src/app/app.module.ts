@@ -12,6 +12,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { SingleFirstCompComponent } from './single-first-comp/single-first-comp.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CreateSnapComponent } from './create-snap/create-snap.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CreateSnapComponent } from './create-snap/create-snap.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: "fr-FR" }
