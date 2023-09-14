@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Snap} from "../models/snap.model";
 import {SnapService} from "../services/snap.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Observable, tap} from "rxjs";
 
 @Component({
@@ -19,7 +19,8 @@ export class SingleFirstCompComponent implements OnInit {
   snapId!: number;
 
   constructor(private snapService: SnapService,
-              private activatedRoute: ActivatedRoute) {}
+              private activatedRoute: ActivatedRoute,
+              private router: Router) {}
 
   ngOnInit(): void {
     this.snapId = +this.activatedRoute.snapshot.params["id"];
@@ -46,6 +47,13 @@ export class SingleFirstCompComponent implements OnInit {
         })
       );
     }
-
   }
+
+
+
+  handleDelete(): void {
+    this.snapService.deleteSnap(this.snapId);
+    this.router.navigateByUrl("snaps");
+  }
+
 }

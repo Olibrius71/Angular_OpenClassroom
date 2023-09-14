@@ -9,5 +9,7 @@
         <p>✌️ <span [ngStyle]="{ color: 'rgb(' + (255 - snap.snaps * 4) + ', 255, ' + (255 - snap.snaps * 4) + ')'}">{{snap.snaps}}</span> </p>
 
         <button (click)="handleSnap()">{{buttonText}}</button>
+
+        <button (click)="handleDelete()">SUPPRIMER</button>
     </div>
 </div>

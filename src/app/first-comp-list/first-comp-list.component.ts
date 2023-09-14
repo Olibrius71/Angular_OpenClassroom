@@ -20,7 +20,6 @@ export class FirstCompListComponent implements OnInit, OnDestroy {
 
     interval(560)
       .pipe(
-        tap(console.log),
         takeUntil(this.destroyed$)
         )
       .subscribe()

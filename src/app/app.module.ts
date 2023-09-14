@@ -13,6 +13,7 @@ import { SingleFirstCompComponent } from './single-first-comp/single-first-comp.
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CreateSnapComponent } from './create-snap/create-snap.component';
 import {HttpClientModule} from "@angular/common/http";
+import {httpInterceptorProviders} from "./interceptors";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {HttpClientModule} from "@angular/common/http";
     HttpClientModule
   ],
   providers: [
-    { provide: LOCALE_ID, useValue: "fr-FR" }
+    { provide: LOCALE_ID, useValue: "fr-FR" },
+    httpInterceptorProviders
   ],
   bootstrap: [AppComponent]
 })
