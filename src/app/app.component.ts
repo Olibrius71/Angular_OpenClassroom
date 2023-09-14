@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Snap} from "./models/snap.model";
+import {Snap} from "./core/models/snap.model";
 import {concatMap, delay, filter, interval, map, mergeMap, Observable, of, switchMap, take, tap} from "rxjs";
 
 @Component({

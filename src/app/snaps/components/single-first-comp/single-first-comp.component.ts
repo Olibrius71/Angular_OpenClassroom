@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Snap} from "../models/snap.model";
-import {SnapService} from "../services/snap.service";
+import {Snap} from "../../../core/models/snap.model";
+import {SnapService} from "../../../core/services/snap.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Observable, tap} from "rxjs";
 

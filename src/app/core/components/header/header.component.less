@@ -1,0 +1,39 @@
+.flex(@direction: column, @justify: space-evenly, @align: center) {
+    display: flex;
+    flex-direction: @direction;
+    justify-content: @justify;
+    align-items: @align;
+}
+
+.bordered(@border-size: 3px, @border-color: ghostwhite, @radius: 7px) {
+    border: @border-size ridge @border-color;
+    border-radius: @radius;
+}
+@black-color: #010121;
+
+header {
+    background-color: @black-color;
+    width: 100%;
+
+    .flex();
+
+    h2 {
+        margin: 2vh 0;
+    }
+
+
+    nav {
+        width: 25%;
+        .flex(@direction: row);
+        margin: 0 0 2vh 0;
+
+        a {
+            font-size: 1.09rem;
+        }
+
+        .current {
+            color: dodgerblue;
+        }
+    }
+}
+

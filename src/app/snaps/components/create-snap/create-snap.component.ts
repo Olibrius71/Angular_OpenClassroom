@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Observable} from "rxjs";
-import {Snap} from "../models/snap.model";
-import {SnapService} from "../services/snap.service";
+import {Snap} from "../../../core/models/snap.model";
+import {SnapService} from "../../../core/services/snap.service";
 import {Router} from "@angular/router";
 
 @Component({

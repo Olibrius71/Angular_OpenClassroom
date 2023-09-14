@@ -1,9 +1,9 @@
 import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
-import {FirstCompListComponent} from "./first-comp-list/first-comp-list.component";
+import {FirstCompListComponent} from "./snaps/components/first-comp-list/first-comp-list.component";
 import {HomePageComponent} from "./home-page/home-page.component";
-import {SingleFirstCompComponent} from "./single-first-comp/single-first-comp.component";
-import {CreateSnapComponent} from "./create-snap/create-snap.component";
+import {SingleFirstCompComponent} from "./snaps/components/single-first-comp/single-first-comp.component";
+import {CreateSnapComponent} from "./snaps/components/create-snap/create-snap.component";
 
 const routes: Routes = [
   {path: "snaps", component: FirstCompListComponent},

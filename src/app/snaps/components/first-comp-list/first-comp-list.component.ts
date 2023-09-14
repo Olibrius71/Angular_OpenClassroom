@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Snap} from "../models/snap.model";
-import {SnapService} from "../services/snap.service";
+import {Snap} from "../../../core/models/snap.model";
+import {SnapService} from "../../../core/services/snap.service";
 import {interval, Observable, Subject, takeUntil, tap} from "rxjs";
 
 @Component({
